@@ -5,16 +5,19 @@ var signupPost = (req, res) => {
     let userPassword = req.body.password;
     let firstName = req.body.firstName
     let lastName = req.body.lastName
+    let age = req.body.age
+    console.log(firstName,lastName,age)
     User.create({
         firstName: firstName,
         lastName: lastName,
         login: userName,
-        password: userPassword
+        password: userPassword,
+        Age:age
     }, function (err, doc) {
-        if (err) return console.log(err);
+        if (err) return console.log("err:",err);
         console.log("Сохранен объект user", doc);
-        return res.status(200).json('sdsds');
-
+        return res.status(200).json("sdsdfs")
+        //  return res.redirect("/");
     });
 
 }
