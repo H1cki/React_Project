@@ -2,7 +2,7 @@ var jwt = require('jsonwebtoken');
 const User  = require("../models/user");
 
 const checkAuth = (req, res, next) => {
-    const { cookie } = req.headers;
+    const  cookie  = req.body.cookie.cookie
    
     var decoded = jwt.verify(cookie, "shhhhh", function(err, decoded) {
         if (err) {

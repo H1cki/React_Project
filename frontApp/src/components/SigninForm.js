@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style/signin.css"
-import api from '../Api';   
+import api from '../Api';
 import { Redirect } from "react-router-dom";
 import Input from "./common/Input"
 import Button from "./common/Button"
-
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 
 class SigninForm extends Component {
@@ -17,7 +17,7 @@ class SigninForm extends Component {
             email: "",
             password: "",
             result: "",
-            id:"",
+            id: "",
             isRedirectTo: false
         }
         this.handleEmailChange = this.handleEmailChange.bind(this)
@@ -37,18 +37,15 @@ class SigninForm extends Component {
             })
             console.log(res.data.token);
             document.cookie = (res.data.token)
-            this.setState({id:res.data.id})
+            this.setState({ id: res.data.id })
             this.setState({ isRedirectTo: true })
-        
+
         }
         catch (err) {
             console.log(err);
             this.setState({ result: "err" })
 
         }
-
-
-
 
     }
     handleEmailChange(event) {
@@ -62,7 +59,7 @@ class SigninForm extends Component {
     render() {
         return (
             <React.Fragment>
-                {this.state.isRedirectTo ? <Redirect to={"/main/"+this.state.id}></Redirect> : ""}
+                {this.state.isRedirectTo ? <Redirect to={"/main/" + this.state.id}></Redirect> : ""}
                 <form onSubmit={this.handleSubmit} action="" className="form-signin">
                     <h1 className="h4 mb-3 font-weight-normal">Please sign in</h1>
                     <label htmlFor="inputEmail" className="sr-only">Email address</label>
@@ -71,8 +68,8 @@ class SigninForm extends Component {
                     <Input type="password" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange} />
                     <label><input type="checkbox" value="remember-me" /> Remember me</label><br />
                     <span>{this.state.result === "err" ? "User not found or Wrong password" : null}</span><br></br>
-                    <Button className="btn btn-lg btn-primary btn-block" type="submit" text="Sign in"/>
-                    <a id="signup" href="/signup">sign up</a>
+                    <Button className="btn btn-lg btn-primary btn-block" type="submit" text="Sign in" />
+                    <a id="signup"><Link to="/signup">sign up</Link></a>
                     <p className="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
                 </form>
             </React.Fragment>

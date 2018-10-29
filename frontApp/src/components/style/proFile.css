@@ -14,7 +14,7 @@ body{
     height: 100%;
 
 }
-.information_field{
+.information_field{ 
     width: 300px;
 }
 .information_field input{
@@ -29,6 +29,7 @@ body{
     justify-content:space-between; 
     margin-top:30px;
     margin-bottom:30px;
+    width: 300px;
 }
 .pedit_labeled{
     margin-left:10px;

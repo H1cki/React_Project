@@ -5,6 +5,7 @@ import { Redirect } from     "react-router-dom";
 import api from '../Api';
 import Input from "./common/Input"
 import Button from "./common/Button"
+import { BrowserRouter as Router,Link} from "react-router-dom";
 
 const InputDiv = ({ htmlFor, type, placeholder, value, text, onChange }) => {
     return <div className="form-group">
@@ -96,7 +97,7 @@ class RegistrationForm extends Component {
                                 <span >{this.state.result === "err" ? "user already exists" : null}</span>
                                 <div className="form-group">
                                     <Button className="btn btn-default" type="submit" text="Sign up" />
-                                    <a id="signup" href="/signIn">sign in</a>
+                                  <a><Link to="/signIn">sign in</Link></a>
                                 </div>
                             </form>
                         </div>

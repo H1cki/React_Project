@@ -16,7 +16,7 @@ class App extends Component {
           <Route exact path="/signin" component={SigninForm} />
           <Route exact path="/signup" component={RegistrationForm} /> 
           <Route exact path="/main/:id" component={MainPage}/>
-          <Route exact path="/main/:id/profile" component={Profail}/>
+          <Route exact path="/profile" component={Profail}/>
           <Route exact path="/mission" component={Mission}/>
           </Switch>  
         </Router>

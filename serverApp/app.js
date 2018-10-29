@@ -11,7 +11,8 @@ var cookieParser = require('cookie-parser')
 var { checkAuth } = require("./middlewares/Auth")
 var { signupCheck } = require("./middlewares/check")
 var { signinPost } = require("./mainCtrl/signinController");
-var {  signupPost } = require("./mainCtrl/signupController");
+var { signupPost } = require("./mainCtrl/signupController");
+var { profileRenderPost } = require("./mainCtrl/profileRenderPost");
 // var { usersListGet } = require("./mainCtrl/usersListController");
 var { profilePost  } = require("./mainCtrl/profileController");
 // var { sortGet } = require("./mainCtrl/sortContoller");
@@ -32,11 +33,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
 app.use(express.static(__dirname + "/public"));
+
 app.set('views', __dirname + "/public")
 app.set('view engine', 'ejs');
 app.post("/api/signin", signinPost)
 app.post("/api/signup", signupCheck, signupPost);
-
-app.post("/profile", checkAuth, upload.single('avatar'), profilePost);
+app.post("/api/profile",checkAuth, profileRenderPost)
+// app.post("/profile", checkAuth, upload.single('avatar'), profilePost);
 
 app.listen(3000);
