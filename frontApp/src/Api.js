@@ -8,44 +8,43 @@ const api = {
     },
 
     signIn: (user, password) => {
-        return axios.post(`${config.url}/api/signin`, 
+        return axios.post(`${config.url}/api/signin`,
             user, password);
-            
+
     },
 
-
-    bd:()=>{
+    bd: () => {
         return axios.post(`${config.url}/api/signin`);
 
     },
 
-    profileRender:(cookie)=> {
-        return axios.post(`${config.url}/api/profile`,{cookie:cookie});
+    profileRender: (cookie) => {
+        return axios.post(`${config.url}/api/profile`, { cookie: cookie });
     },
-    newAvatar: (login, avatar, img) => {
+    newAvatar: (avatar, img,lastName,firstName,age,role) => {
         let data = new FormData();
         data.append('avatar', avatar);
         data.append('avatarIMG', img);
-        data.append('firstName', this.state.firstName);
-        data.append('lastName', this.state.lastName);
-        data.append('userAge', this.state.age);
-        data.append('userRole', this.state.role);
+        data.append('firstName', firstName);
+        data.append('lastName', lastName);
+        data.append('userAge', age);
+        data.append('userRole', role);
 
         return axios
-          .put(
-            `${config.url}/api/users/avatar/${login}`,
-            data,
-            {
-              headers: {
-                'Content-Type': 'multipart/form-data'
-              }
-            }
-          );
-      },
+            .put(
+                `${config.url}/api/users/avatar/`,
+                data,
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }
+            );
+    },
 
 
 
-  
+
 };
 
 export default api;

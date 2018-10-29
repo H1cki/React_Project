@@ -8,7 +8,6 @@ import Input from "./common/Input"
 import Button from "./common/Button"
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
-
 class SigninForm extends Component {
 
     constructor(props) {
