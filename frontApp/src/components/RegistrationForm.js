@@ -34,12 +34,9 @@ class RegistrationForm extends Component {
             result: "",
             isRedirectTo: false
         }
-        this.handleEmailChange = this.handleEmailChange.bind(this)
-        this.handlePasswordChange = this.handlePasswordChange.bind(this)
+   )
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleAgeChange = this.handleAgeChange.bind(this)
-        this.handleLastNameChange = this.handleLastNameChange.bind(this)
-        this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
+
     }
 
 
@@ -62,20 +59,20 @@ class RegistrationForm extends Component {
     }
 
 
-    handleEmailChange(event) {
+    handleEmailChange = (event) => {
         this.setState({ email: event.target.value });
 
     }
-    handlePasswordChange(event) {
+    handlePasswordChange = (event) =>  {
         this.setState({ password: event.target.value });
     }
-    handleFirstNameChange(event) {
+    handleFirstNameChange = (event) =>  {
         this.setState({ firstName: event.target.value });
     }
-    handleLastNameChange(event) {
+    handleLastNameChange = (event) =>  {
         this.setState({ lastName: event.target.value });
     }
-    handleAgeChange(event) {
+    handleAgeChange = (event) =>  {
         this.setState({ age: event.target.value });
     }
 
