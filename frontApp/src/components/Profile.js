@@ -27,7 +27,7 @@ const InputDivAvatar = () => {
     </div>
 }
 
-class Profail extends Component {
+class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -41,13 +41,7 @@ class Profail extends Component {
             role: "",
             isRedirectTo: false
         }
-        this.handleEmailChange = this.handleEmailChange.bind(this)
-        this.handlePasswordChange = this.handlePasswordChange.bind(this)
-        this.handleAgeChange = this.handleAgeChange.bind(this)
-        this.handleLastNameChange = this.handleLastNameChange.bind(this)
-        this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
-        this.handleSubmit1 = this.handleSubmit1.bind(this)
-        this.handleRoleChange = this.handleRoleChange.bind(this)
+
         console.log(props.match.params)
     }
 
@@ -131,7 +125,7 @@ class Profail extends Component {
             <React.Fragment>
                 {/* {this.state.isRedirectTo ? <Redirect to="/signin"></Redirect> : ""} */}
                 <form className="form-signin">
-                    <div className="proFile">
+                    <div className="profile">
                         <InputDivAvatar />
                         <div className="information_field">
                             <InputDiv text="Fist name" value={this.state.result ? this.state.data.firstName : this.state.firstName} onChange={this.handleFirstNameChange} type="text" />
@@ -150,4 +144,4 @@ class Profail extends Component {
 
     }
 }
-export default Profail;
+export default Profile;
