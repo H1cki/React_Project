@@ -108,22 +108,11 @@ class Profile extends Component {
         }
     }
 
-    // componentDidMount() {
-    // //     var _this = this;
-    // //     axios.get('/path/to/user-api').then(function(response) {
-    // //       _this.setState({users: response.data})
-    // //     });
-    // //   }
-
-    // componentDidMount(){
-
-    //     api.sdfsffsfds
-
-    // }
+    
     render() {
         return (
             <React.Fragment>
-                {/* {this.state.isRedirectTo ? <Redirect to="/signin"></Redirect> : ""} */}
+             
                 <form className="form-signin">
                     <div className="profile">
                         <InputDivAvatar />
